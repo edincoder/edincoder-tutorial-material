@@ -1,8 +1,58 @@
 
-/* Step 1: Use one of the lovely Google Fonts to  */
+/* Edincoder Level 2 -> CSS Step 1: Use one of the lovely Google Fonts instead of the default Times New Roman!
+  To do this, click Assets in the bottom-left of Codepen, then Fonts, pick one and click Copy @import, then paste this into your CSS
+  Once you've imported a font, you can then create a CSS rule which applies to the whole body and changes the font-family to your chosen font name */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 
 body {
+    font-family: Montserrat, sans-serif;
+
+    /* Edincoder Level 2 -> CSS Step 2: Replace the white background with a full screen background image.
+       First you'll need to find a suitable image which is high resolution and free to use - the Codepen Assets tool has some decent ones!
+       If you can't find something you like, you can always find one elsewhere online (e.g. pexels.com) and upload it to a free image host.
+       Once you've got an image URL, use the background-image and background-size CSS rules to make it /cover/ the whole body section */
     background-image: url("https://images.unsplash.com/photo-1506377585622-bedcbb027afc?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=a9e6f90ef3dc023c4c40a78153993762");
     background-size: cover;
+}
+
+/* Edincoder Level 2 -> CSS Step 3: Give the profile content section a white background so the black text is readable despite the body background image */
+section.profile-bio {
+    background: white;
+
+    /* Edincoder Level 2 -> CSS Step 4: Make the profile content section width only 35% of the page, and center it horizontally
+       To center a block-level element (like <section>, <div> etc.) horizontally, the easiest way is to give it a margin value of "auto" */
+    width: 35%;
+    margin: auto;
+
+    /* Edincoder Level 2 -> CSS Step 5: Give the profile section 60px of padding, 100px top and bottom margins, and a border-radius of 4px to give it subtly rounded corners */
+    padding: 60px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 4px;
+}
+
+/* Edincoder Level 2 -> CSS Step 6: Make your profile photo circular, with a 150px diameter
+    To do this, you'll want to set the width and height to 150px here, and remove any previous style rule you may have placed inline on the <img> tag in your HTML
+    You'll then want to set a border-radius of 50% - essentially giving it "rounded corners", but where the corners are so round it becomes circular! */
+img.podduck-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+
+/* Edincoder Level 2 -> CSS Step 7: Position your profile photo so it is horizontally centered and hovers half above the profile section
+    To do this, you'll first need to add a position: relative rule to the profile section so we can position elements inside it.
+    Then, we can give the <img> a position: absolute and specify its position using the top: and left: css rules
+    Since we've made the image circular with 150px diameter, you can give it a top: position of -75px and it will be positioned half above the profile section.
+    To center it horizontally, we need to make use of the calc() function to find the right left: value, as we want to position it at the halfway point (50%), minus 75px.
+*/
+section.profile-bio {
+    position: relative;
+}
+
+img.podduck-image {
+    position: absolute;
+    top: -75px;
+    left: calc(50% - 75px);
 }
