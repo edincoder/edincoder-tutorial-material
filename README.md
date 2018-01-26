@@ -7,14 +7,14 @@
 ![Level 1 Screenshot](http://one.edincoder.tk/screenshots/level-1-step-6.png "Level 1 Screenshot")
 
 
-## Level 2: [Demo](http://two.edincoder.tk) / [Codepen](https://codepen.io/beveradb/pen/)
+## Level 2: [Demo](http://two.edincoder.tk) / [Codepen](https://codepen.io/beveradb/pen/ZvgGJd)
 - Outcome: Simple "About Me" page, hopefully more aesthetically pleasing
 - Learning: Introductory CSS rules and properties
 - Screenshot:
 ![Level 2 Screenshot](http://two.edincoder.tk/screenshots/level-2-step-8.png "Level 2 Screenshot")
 
 
-## Level 3: [Demo](http://three.edincoder.tk) / [Codepen](https://codepen.io/beveradb/pen/)
+## Level 3: [Demo](http://three.edincoder.tk) / [Codepen](https://codepen.io/beveradb/pen/goVpGo)
 - Outcome: Further styling of "About Me" page, with small amount of interactivity, button which launches email client
 - Learning: Further CSS, introduction to JavaScript
 - Screenshot:
