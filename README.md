@@ -7,7 +7,7 @@ Screenshot:
 
 ## Level 2: [Demo](http://two.edincoder.tk) / [Codepen](https://codepen.io/beveradb/pen/)
 Screenshot:
-![Level 2 Screenshot](http://two.edincoder.tk/screenshots/level-2-step-7.png "Level 2 Screenshot")
+![Level 2 Screenshot](http://two.edincoder.tk/screenshots/level-2-step-8.png "Level 2 Screenshot")
 
 
 ## Level 3: [Demo](http://three.edincoder.tk) / [Codepen](https://codepen.io/beveradb/pen/)

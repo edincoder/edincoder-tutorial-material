@@ -40,7 +40,6 @@ img.podduck-image {
     border-radius: 50%;
 }
 
-
 /* Edincoder Level 2 -> CSS Step 7: Position your profile photo so it is horizontally centered and hovers half above the profile section
     To do this, you'll first need to add a position: relative rule to the profile section so we can position elements inside it.
     Then, we can give the <img> a position: absolute and specify its position using the top: and left: css rules
@@ -55,4 +54,18 @@ img.podduck-image {
     position: absolute;
     top: -75px;
     left: calc(50% - 75px);
+}
+
+/* Edincoder Level 2 -> CSS Step 8: Center your social icon links and make these a bit bigger
+    You should be able to center the icons by adding a simple text-align rule to the social-links <div>.
+    To make the icons bigger, first remove the inline "style" attribute from the <svg> tags in your HTML.
+    You can then create a CSS rule here which applies to all <svg> tags in the social-links div, and apply a width and height (e.g. 40px).
+    One of the cool things about SVG is that you can even make other changes to the icons themselves from CSS - for example you can change the colour here using the "fill" attribute!
+     */
+div.social-links {
+    text-align: center;
+}
+div.social-links svg {
+    width: 40px;
+    height: 40px;
 }
