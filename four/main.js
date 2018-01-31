@@ -47,6 +47,7 @@ var setupHireMeButtonClick = function() {
     }, false);
 
     hiremePopupCancelButton.addEventListener("click", function(e) {
+        e.preventDefault();
         hiremeOverlay.classList.remove("visible");
     }, false);
 };
