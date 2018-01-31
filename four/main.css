@@ -1,0 +1,213 @@
+
+/* Edincoder Level 2 -> CSS Step 1: Use one of the lovely Google Fonts instead of the default Times New Roman!
+  To do this, click Assets in the bottom-left of Codepen, then Fonts, pick one and click Copy @import, then paste this into your CSS
+  Once you've imported a font, you can then create a CSS rule which applies to the whole body and changes the font-family to your chosen font name */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+body {
+    font-family: Montserrat, sans-serif;
+
+    /* Edincoder Level 2 -> CSS Step 2: Replace the white background with a full screen background image.
+       First you'll need to find a suitable image which is high resolution and free to use - the Codepen Assets tool has some decent ones!
+       If you can't find something you like, you can always find one elsewhere online (e.g. pexels.com) and upload it to a free image host.
+       Once you've got an image URL, use the background-image and background-size CSS rules to make it /cover/ the whole body section */
+    background-image: url("https://images.unsplash.com/photo-1506377585622-bedcbb027afc?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=a9e6f90ef3dc023c4c40a78153993762");
+    background-size: cover;
+}
+
+/* Edincoder Level 2 -> CSS Step 3: Give the profile content section a white background so the black text is readable despite the body background image */
+section.profile-bio {
+    background: white;
+
+    /* Edincoder Level 2 -> CSS Step 4: Make the profile content section width only 35% of the page, and center it horizontally
+       To center a block-level element (like <section>, <div> etc.) horizontally, the easiest way is to give it a margin value of "auto" */
+    width: 35%;
+    margin: auto;
+
+    /* Edincoder Level 2 -> CSS Step 5: Give the profile section some padding/margins and subtly rounded corners
+     Specifics we've gone with are padding - (60px top/bottom, 30px left/right), margins - 100px top, and a border-radius of 4px for the rounded corners */
+    padding: 60px 30px;
+    margin-top: 100px;
+    border-radius: 4px;
+}
+
+/* Edincoder Level 2 -> CSS Step 6: Make your profile photo circular, with a 150px diameter
+    To do this, you'll want to set the width and height to 150px here, and remove any previous style rule you may have placed inline on the <img> tag in your HTML
+    You'll then want to set a border-radius of 50% - essentially giving it "rounded corners", but where the corners are so round it becomes circular! */
+img.podduck-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+/* Edincoder Level 2 -> CSS Step 7: Position your profile photo so it is horizontally centered and hovers half above the profile section
+    To do this, you'll first need to add a position: relative rule to the profile section so we can position elements inside it.
+    Then, we can give the <img> a position: absolute and specify its position using the top: and left: css rules
+    Since we've made the image circular with 150px diameter, you can give it a top: position of -75px and it will be positioned half above the profile section.
+    To center it horizontally, we need to make use of the calc() function to find the right left: value, as we want to position it at the halfway point (50%), minus 75px.
+*/
+section.profile-bio {
+    position: relative;
+}
+
+img.podduck-image {
+    position: absolute;
+    top: -75px;
+    left: calc(50% - 75px);
+}
+
+/* Edincoder Level 2 -> CSS Step 8: Center your social icon links and make these a bit bigger
+    You should be able to center the icons by adding a simple text-align rule to the social-links <div>.
+    To make the icons bigger, first remove the inline "style" attribute from the <svg> tags in your HTML.
+    You can then create a CSS rule here which applies to all <svg> tags in the social-links div, and apply a width and height (e.g. 40px).
+    One of the cool things about SVG is that you can even make other changes to the icons themselves from CSS - for example you can change the colour here using the "fill" attribute!
+     */
+div.social-links {
+    text-align: center;
+}
+div.social-links svg {
+    width: 40px;
+    height: 40px;
+}
+
+/* Edincoder Level 3 -> CSS Step 4: Improve the styling of the title and subtitle, with centering and capitalisation
+    First, give both the <h1> and <h3> tags a text-align property to center them.
+    Then give the <h1> a text-transform to capitalise it, and a letter-spacing of 2px as a design element.
+    To help bring the title together as one entity, make the bottom margin only 10px for the <h1>, 30px for the <h3> and make the top margin 0 for the <h3>
+    Lastly, change the text colour ("colour:") to #333 - this is a dark grey which will fit in with the rest of the styles slightly better than the default black */
+section.profile-bio h1,
+section.profile-bio h3 {
+    text-align: center;
+    color: #333;
+}
+section.profile-bio h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+section.profile-bio h3 {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/* Edincoder Level 3 -> CSS Step 5: Improve the styling of the "Hire Me" button
+    There are a few properties needed to make this button look good, so hang in there:
+    display: block - this allows us to give the button other block-level properties (such as width)
+    width: 70% - so it's not the full width of the section
+    margin: 20px auto - a bit of space above/below the button, and automatic margins on left/right so it will be centered
+    padding: 10px - this gives the button a bit of bulk so it looks more like a button than just a rectangle with text in it
+    border: none - HTML buttons come with ugly thick borders by default, so we're removing this for the aesthetic benefit
+    border-radius: 4px - rounded corners; it's a button.
+    background-color: #666 - a dark grey which won't jump out at you but it clear and legible
+    color: white - white text on grey background; classy
+*/
+button#hireme {
+    display: block;
+    width: 70%;
+    margin: 20px auto;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #666;
+    color: white;
+}
+
+/* Edincoder Level 3 -> CSS Step 6: Resize bio paragraphs to match button width and reduce font size a bit
+    For all <p> tags inside the profile section, set the width and margin to match the Hire Me button (70%, 20px/auto), and specify a font size of 14px */
+section.profile-bio p {
+    width: 70%;
+    margin: 20px auto;
+    font-size: 14px;
+}
+
+/* Edincoder Level 3 -> CSS Step 7: Improve the styling of the "top skills" list
+    We're going to fairly radically change how this bullet-point list is displayed - in fact we're going to make it a horizontal list with no bullets at all!
+    As such, there's a few properties to set again; let's run through them explaining what each does:
+    display: flex; - this is a very /flex/ible new CSS property which lets you define how an item will grow or shrink to fit the space available in its container
+    justify-content: space-between; - this tells the flex layout to justify all child elements by varying the space between each element
+    width: 70%; - set the width of this <ul> tag (which we're now treating more as if it were a <div> or some other container) to match the paragraphs above it
+    margin: 0 auto 20px auto; - set the margins of this horizontal <ul> so it's centered horizontally like the paragraphs, but also has 20px margin below it to push the social icons away
+    padding: 0; - <ul> comes by default with some hefty margins set, so we want to remove these as we're taking more control over how it's displayed
+    list-style-type: none; - get rid of the bullet points! <ul> is actually a very flexible element which should be used whenever you're representing a /list/ of things, not just for bulletpoints!
+    font-size: 14px; - reduce font size to match paragraphs
+    color: #999; - make text a light grey, so these skills are just a very unobtrustive bit of extra info
+*/
+ul.skills {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto 20px auto;
+    padding: 0;
+    list-style-type: none;
+    font-size: 14px;
+    color: #999;
+}
+
+/* Edincoder Level 3 -> CSS Step 8: Make the "Hire Me" button and the social links change colour when you hover over them
+    For both of these you'll want to use the :hover pseudo-selector to apply the rule only when you're hovering the mouse over the elements.
+    For the button, it'll simply be change the background colour - I'd go for a nice blue, something like #6688BB
+    For the social links you'll want a :hover rule which targets any <svg> tag in the social-links container, and sets the fill: property to your chosen colour */
+button#hireme:hover {
+    background-color: #6688BB;
+}
+div.social-links svg:hover {
+    fill: #6688BB;
+}
+
+
+/* Edincoder Level 4 -> CSS Step */
+
+#hireme-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.8);
+}
+
+#hireme-popup {
+    display: block;
+    width: 400px;
+    height: auto;
+    background: white;
+    margin: 40px auto;
+    border-radius: 5px;
+    padding: 5px 20px;
+    overflow-y: auto;
+}
+#hireme-popup h3 {
+    text-align: center;
+}
+#hireme-popup input,
+#hireme-popup textarea,
+#hireme-popup button {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+#hireme-popup textarea {
+    height: 150px;
+}
+#hireme-popup #hireme-send {
+    background: #0872b4;
+    border-color: #0872b4;
+    color: white;
+    cursor: pointer;
+}
+#hireme-popup #hireme-cancel {
+    background: #333;
+    border-color: #333;
+    color: white;
+    cursor: pointer;
+}
+#hireme-overlay.visible {
+    display: block;
+}
+
+
