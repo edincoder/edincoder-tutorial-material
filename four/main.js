@@ -18,6 +18,7 @@
 var setupHireMeButtonClick = function() {
     var hiremeButton = document.getElementById('hireme');
     var hiremeOverlay = document.getElementById('hireme-overlay');
+    var hiremeForm = document.getElementById('hireme-form');
     var hiremePopupSendButton = document.getElementById('hireme-send');
     var hiremePopupCancelButton = document.getElementById('hireme-cancel');
 
@@ -25,17 +26,24 @@ var setupHireMeButtonClick = function() {
         hiremeOverlay.classList.add("visible");
     }, false);
 
-    hiremePopupSendButton.addEventListener("click", function(e) {
-        var hiremeMailtoLink = document.createElement('a');
-        var mailToLink = "mailto:help@edincoder.tk?";
+    hiremeForm.addEventListener("submit", function(e) {
+        e.preventDefault();
 
-        var mailContent = "Subject=About Me Message from: " + document.getElementById("hireme-name").value + "&";
-        mailContent += "cc=" + document.getElementById("hireme-email").value + "&";
-        mailContent += "body=" + encodeURIComponent(document.getElementById("hireme-message").value);
+        if(hiremeForm.checkValidity()) {
 
-        hiremeMailtoLink.href = mailToLink + mailContent;
-        hiremeMailtoLink.target = "_blank";
-        hiremeMailtoLink.click();
+            var hiremeMailtoLink = document.createElement('a');
+            var mailToLink = "mailto:help@edincoder.tk?";
+
+            var mailContent = "Subject=About Me Message from: " + document.getElementById("hireme-name").value + "&";
+            mailContent += "cc=" + document.getElementById("hireme-email").value + "&";
+            mailContent += "body=" + encodeURIComponent(document.getElementById("hireme-message").value);
+
+            hiremeMailtoLink.href = mailToLink + mailContent;
+            hiremeMailtoLink.target = "_blank";
+            hiremeMailtoLink.click();
+
+            hiremeOverlay.classList.remove("visible");
+        }
     }, false);
 
     hiremePopupCancelButton.addEventListener("click", function(e) {

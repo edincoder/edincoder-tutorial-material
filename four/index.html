@@ -78,11 +78,13 @@
 <div id="hireme-overlay">
     <div id="hireme-popup">
         <h3>Hire PODDuck</h3>
-        <input type="text" id="hireme-name" placeholder="Name"/>
-        <input type="text" id="hireme-email" placeholder="Email address"/>
-        <textarea id="hireme-message" placeholder="Type your message here..."></textarea>
-        <button id="hireme-send">Send</button>
-        <button id="hireme-cancel">Cancel</button>
+        <form id="hireme-form">
+            <input type="text" id="hireme-name" required placeholder="Name"/>
+            <input type="text" id="hireme-email" required placeholder="Email address"/>
+            <textarea id="hireme-message" required placeholder="Type your message here..."></textarea>
+            <button type="submit" id="hireme-send">Send</button>
+            <button id="hireme-cancel">Cancel</button>
+        </form>
     </div>
 </div>
 </body>
